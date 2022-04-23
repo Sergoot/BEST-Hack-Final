@@ -8,7 +8,7 @@
     {% for data in data %}
         <h1>{{data.source}}</h1><br>
         <h2>{{data.title}}</h2><br>
-        <h2>{{data.content|truncatechars:100}}</h2>
+        <h2>{{data.content}}</h2>
         <h4>Опубликовано: {{data.date}}</h4>
     <img src="{{data.url}}" alt="...">
     {% endfor %}
