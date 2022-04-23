@@ -27,18 +27,20 @@ def news(request, category_title):
         urlToImage = resp['urlToImage']
         content = resp['description']
         res_content = content.replace('<ol><li>', '')
-        res_content_final=res_content.replace('</li><li>', '')
-        date=resp['publishedAt']
+        res_content_final = res_content.replace('</li><li>', '')
+        print(res_content_final)
+        date = resp['publishedAt']
         res_date = date.replace('T',' ')
-        res_res_final = res_date.replace('Z','')
+        res_date_final = res_date.replace('Z','')
         data_dict = {
                      'source': source,
                      'title': title,
                      'url': urlToImage,
                      'content': res_content_final,
-                     'date': res_res_final,
+                     'date': res_date_final,
                      }
         data1.append(data_dict)
+
     context = {'data': data1, 'all_cats': all_cats}
-    return render(request, 'news/news.html', context)
+    return render(request, 'news/news1.html', context)
 

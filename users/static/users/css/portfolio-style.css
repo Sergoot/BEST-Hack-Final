@@ -1,0 +1,33 @@
+.buy{
+text-align: center;
+}
+.botn:hover{
+box-shadow: 0 8px 65px -5px black;
+color: black;
+}
+
+.botn{
+font-family: 'Nunito', sans-serif;
+letter-spacing: 1px;
+font-size: 15px;
+line-height: 20px;
+background-color: rgb(13,110,253);
+color: black;
+border: none;
+border-radius: 10px;
+min-width: 20%;
+box-shadow: 0 10px 60px -10px grey;
+cursor: pointer;
+transition: all 5s cubic-bezier(0.03, 0.98, 0.52, 0.99);
+outline: none;
+text-decoration: none;
+text-transform: uppercase;
+padding: 10px;
+color: white;
+}
+h3{
+margin: 1%;
+}
+.buy{
+margin-top: 1%;
+}

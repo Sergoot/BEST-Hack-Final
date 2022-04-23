@@ -20,5 +20,5 @@ from .models import CustomUser
 #     )
 #     search_fields = ('email',)
 #     ordering = ('email',)
-# admin.site.register(CustomUser)
+admin.site.register(CustomUser)
 

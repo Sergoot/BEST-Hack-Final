@@ -1,15 +1,3 @@
-.card{
-  width: 60vw;
-  margin-left: 20vw;
-  margin-top: 20px;
-  box-shadow:  0 8px 30px -5px grey;
-  padding: 1%;
-}
-
-.select{
-  margin: 1%;
-}
-
 .botn:hover{
   box-shadow: 0 8px 65px -5px black;
   color: black;

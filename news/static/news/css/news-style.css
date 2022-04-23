@@ -1,6 +1,16 @@
-.buy{
+.card{
+  width: 60vw;
+  margin-left: 20vw;
+  margin-top: 20px;
+  box-shadow:  0 8px 30px -5px grey;
+  padding: 1%;
+}
+
+.select{
+  margin: 1%;
   text-align: center;
 }
+
 .botn:hover{
   box-shadow: 0 8px 65px -5px black;
   color: black;
@@ -23,4 +33,5 @@
   text-decoration: none;
   text-transform: uppercase;
   padding: 10px;
+  color: white;
 }
