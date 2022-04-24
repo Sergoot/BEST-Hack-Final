@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 {% load static %}
 {% include 'news/navbar.html' %}
+{% if request.user.is_authenticated %}
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
@@ -46,8 +47,9 @@
 <div class="buy">
 <a class="botn" href="{% url 'users:money' request.user.id %}">Пополнение баланса</a>
 </div>
-
-
+{% else %}
+<h1>Пожалуйста, войдите в аккаунт для того, чтобы управлять портфелем</h1>
+{% endif %}
 
 </body>
 </html>

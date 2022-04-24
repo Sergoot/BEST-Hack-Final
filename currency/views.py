@@ -26,15 +26,23 @@ def current_price(request):
                 if cur.name == cur_name:
                     cur.price = float(cur_price)
                     cur.save()
+                    if request.user.is_authenticated:
+                        try:
+                            q=Portfolio.objects.get(user=request.user, currency=cur.id).quantity
+                        except Portfolio.DoesNotExist:
+                            q = 0
+                    else:
+                        q=''
                     data_cur = {
                                 'ru_title': cur.ru_title,
                                 'name': cur_name,
                                 'price': cur_price,
                                 'id': cur.id,
-
+                                'q': q,
                                 }
                     data.append(data_cur)
-    context = {'data': data,}
+    context = {'data': data}
+
     return render(request, 'currency/currency.html', context)
 
 
@@ -66,6 +74,7 @@ def buy(request, currency_id):
     portfolio.quantity = int(portfolio.quantity)+int(quantity)
     portfolio.total_price = float(portfolio.total_price)+float(currency.price)*int(quantity)
     portfolio.save()
+    print(portfolio.total_price)
     return redirect('price')
 
 

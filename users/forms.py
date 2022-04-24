@@ -6,10 +6,10 @@ from .models import CustomUser
 
 
 class LoginForm(forms.Form):
-    email = forms.EmailField(widget=forms.EmailInput(attrs={
+    username = forms.CharField(widget=forms.TextInput(attrs={
         'id': 'exampleInputEmail1',
         'class': 'form-control',
-        'placeholder': 'example@box.com',
+        'placeholder': 'Введите логин',
     }
     ))
     password = forms.CharField(widget=forms.PasswordInput(attrs={
@@ -32,17 +32,17 @@ class CustomUserCreationForm(UserCreationForm):
 
     class Meta:
         model = CustomUser
-        fields = ('email',)
-        widgets = {'email': TextInput(
+        fields = ('username',)
+        widgets = {'username': TextInput(
             attrs={
                 'id':'exampleInputEmail1',
                 'class': 'form-control',
             }),
-            'password1': PasswordInput(
-                attrs={
-                    'class': 'form-control',
-                }
-            )
+            # 'password1': PasswordInput(
+            #     attrs={
+            #         'class': 'form-control',
+            #     }
+            # )
         }
 
 
@@ -56,6 +56,7 @@ class ValueForm(forms.Form):
     value = forms.FloatField(widget=NumberInput(attrs={
         'id': 'InputValue',
         'class': 'form-control',
+        'min':0,
     }))
 
 

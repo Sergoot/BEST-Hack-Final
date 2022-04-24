@@ -25,14 +25,14 @@ def user_login(request):
             if user is not None:
                 if user.is_active:
                     login(request, user)
-                    return redirect(news_views.news, category='politics')
+                    return redirect('/')
                 else:
                     return HttpResponse('Пользователь заблокирован')
             else:
                 return HttpResponse('Данные введены неверно. Проверьте логин или пароль')
     else:
         if request.user.is_authenticated:
-            return redirect(news_views.news, category='politics')
+            return redirect('/')
         else:
             form = LoginForm()
     return render(request, 'users/login.html', {'form': form})

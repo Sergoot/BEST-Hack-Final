@@ -25,9 +25,15 @@
 
         <th scope="col">Цена</th>
 
+          {% if request.user.is_authenticated %}
+        <th scope="col">У вас</th>
+          {% endif %}
+
         <th scope="col"></th>
 
         <th scope="col"></th>
+
+
       </tr>
     </thead>
     <tbody>
@@ -37,9 +43,16 @@
         <td>{{data.ru_title}} ({{data.name}})</td>
 
         <td>{{data.price}}</td>
-
+    {% if request.user.is_authenticated %}
+          <td>{{data.q}}</td>
         <td><a href="{% url 'buy_page' data.id %}" class="btn btn-primary">Купить</a></td>
         <td><a href="{% url 'sell_page' data.id %}" class="btn btn-primary">Продать</a></td>
+
+        {% else %}
+        <td> </td>
+        <td> </td>
+        {% endif %}
+
       </tr>
       <tr>
 
